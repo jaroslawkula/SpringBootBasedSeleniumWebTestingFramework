@@ -22,7 +22,7 @@ import org.testng.annotations.BeforeSuite;
 
 @SpringBootTest
 @ContextConfiguration(classes = ApplicationConfiguration.class)
-@ActiveProfiles(value = {"local", "chrome"}, resolver = SystemPropertyActiveProfileResolver.class)
+@ActiveProfiles(value = {"local", "msedge"}, resolver = SystemPropertyActiveProfileResolver.class)
 public class SeleniumBase extends AbstractTestNGSpringContextTests {
 
     @Autowired

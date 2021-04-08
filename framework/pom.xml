@@ -17,7 +17,7 @@
     <properties>
         <maven.test.skip>true</maven.test.skip>
         <allure.version>2.7.0</allure.version>
-        <selenium.version>4.0.0-alpha-3</selenium.version>
+        <selenium.version>4.0.0-alpha-7</selenium.version>
         <assertj-core.version>3.13.2</assertj-core.version>
         <awaitility.version>4.0.2</awaitility.version>
         <io.rest-assured.version>3.3.0</io.rest-assured.version>
