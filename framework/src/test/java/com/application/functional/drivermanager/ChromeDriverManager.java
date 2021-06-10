@@ -13,7 +13,7 @@ public class ChromeDriverManager extends DriverManager {
 
     @SneakyThrows
     protected void startService() {
-        Path path = Paths.get(getClass().getResource("drivers/chromedriver/89.0.43.89.23/chromedriver.exe")
+        Path path = Paths.get(getClass().getResource("drivers/chromedriver/91.0.4472.19/chromedriver.exe")
                 .toURI());
         if (null == service) {
             service = new ChromeDriverService.Builder()

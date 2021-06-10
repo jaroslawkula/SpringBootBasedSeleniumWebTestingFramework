@@ -1,10 +1,11 @@
-package com.application.functional.utils;
+package com.application.functional.utils.browser.process;
 
-import lombok.experimental.UtilityClass;
+import org.springframework.stereotype.Component;
 
-@UtilityClass
+@Component
 public class ChromeDriverKiller {
-    public static void killChromeDriverProcesses() {
+    public void kill() {
+
         ProcessHandle.allProcesses()
                 .filter(p -> p.info()
                         .command()

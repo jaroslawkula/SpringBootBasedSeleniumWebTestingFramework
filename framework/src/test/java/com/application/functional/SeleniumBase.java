@@ -4,7 +4,7 @@ import com.application.functional.drivermanager.DriverManager;
 import com.application.functional.infrastructure.ApplicationConfiguration;
 import com.application.functional.profileresolver.SystemPropertyActiveProfileResolver;
 import com.application.functional.url.UrlResolver;
-import com.application.functional.utils.ChromeDriverKiller;
+import com.application.functional.utils.browser.process.DriverKiller;
 import lombok.SneakyThrows;
 import org.awaitility.Awaitility;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +22,7 @@ import org.testng.annotations.BeforeSuite;
 
 @SpringBootTest
 @ContextConfiguration(classes = ApplicationConfiguration.class)
-@ActiveProfiles(value = {"local", "msedge"}, resolver = SystemPropertyActiveProfileResolver.class)
+@ActiveProfiles(value = {"local", "chrome"}, resolver = SystemPropertyActiveProfileResolver.class)
 public class SeleniumBase extends AbstractTestNGSpringContextTests {
 
     @Autowired
@@ -31,13 +31,14 @@ public class SeleniumBase extends AbstractTestNGSpringContextTests {
     private UrlResolver urlResolver;
     @Autowired
     private DriverManager driverManager;
+    @Autowired
+    private DriverKiller driverKiller;
 
     private static final Logger logger = LoggerFactory.getLogger(SeleniumBase.class);
 
     @SneakyThrows
     @BeforeSuite
     public void createDefaultConfiguration() {
-        ChromeDriverKiller.killChromeDriverProcesses();
         super.springTestContextPrepareTestInstance();
         Awaitility.ignoreExceptionsByDefault();
         loadPage();
@@ -56,5 +57,6 @@ public class SeleniumBase extends AbstractTestNGSpringContextTests {
     @AfterSuite(alwaysRun = true)
     public void tearDown() {
         driverManager.quitDriver();
+        driverKiller.kill(); // call appropriate implementation to kill driver processes if quit did not work...
     }
 }
