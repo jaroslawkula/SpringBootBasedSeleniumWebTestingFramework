@@ -25,7 +25,7 @@
         <commons-lang3.version>3.9</commons-lang3.version>
         <commons-collections4>4.3</commons-collections4>
         <lombok.version>1.18.10</lombok.version>
-        <org.json.version>20190722</org.json.version>
+        <org.json.version>20230227</org.json.version>
         <json-simple.version>1.1</json-simple.version>
 
         <project.testSuitesDir>${project.basedir}/src/test/resources/test-suites</project.testSuitesDir>
