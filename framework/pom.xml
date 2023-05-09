@@ -21,7 +21,7 @@
         <assertj-core.version>3.13.2</assertj-core.version>
         <awaitility.version>4.0.2</awaitility.version>
         <io.rest-assured.version>3.3.0</io.rest-assured.version>
-        <testng.version>6.14.3</testng.version>
+        <testng.version>7.5.1</testng.version>
         <commons-lang3.version>3.9</commons-lang3.version>
         <commons-collections4>4.3</commons-collections4>
         <lombok.version>1.18.10</lombok.version>
